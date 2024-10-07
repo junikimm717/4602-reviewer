@@ -1,0 +1,152 @@
+[
+  {
+    "src": "/paintings/oath_horatii.jpg",
+    "artist": "Jacques-Louis David",
+    "names": ["Oath of the Horatii"],
+    "years": [1784]
+  },
+  {
+    "src": "/paintings/tennis_court.jpg",
+    "artist": "Jacques-Louis David",
+    "names": ["Oath in the Tennis Court"],
+    "years": [1790, 1791, 1792]
+  },
+  {
+    "src": "/paintings/death_marat.jpg",
+    "artist": "Jacques-Louis David",
+    "names": ["Death of Marat"],
+    "years": [1793]
+  },
+  {
+    "src": "/paintings/raft_medusa.jpg",
+    "artist": "Théodore Géricault",
+    "names": ["The Raft of the Medusa"],
+    "years": [1817, 1818, 1819]
+  },
+  {
+    "src": "/paintings/massacre_chios.jpg",
+    "artist": "Eugène Delacroix",
+    "names": ["Massacre at Chios"],
+    "years": [1824]
+  },
+  {
+    "src": "/paintings/apotheosis_homer.jpg",
+    "artist": "Jean-Auguste-Dominique Ingres",
+    "names": ["Apotheosis of Homer"],
+    "years": [1827]
+  },
+  {
+    "src": "/paintings/liberty_barricades.jpg",
+    "artist": "Eugène Delacroix",
+    "names": ["Liberty on the Barricades", "Liberty Leading the People"],
+    "years": [1830]
+  },
+  {
+    "src": "/paintings/gargantua.jpg",
+    "artist": "Honoré Daumier",
+    "names": ["Gargantua"],
+    "years": [1831]
+  },
+  {
+    "src": "/paintings/transnonain.jpg",
+    "artist": "Honoré Daumier",
+    "names": ["Rue Transnonain"],
+    "years": [1834]
+  },
+  {
+    "src": "/paintings/republique.jpg",
+    "artist": "Honoré Daumier",
+    "names": ["La Republique", "the republic"],
+    "years": [1848]
+  },
+  {
+    "src": "/paintings/stonebreakers.jpg",
+    "artist": "Gustave Courbet",
+    "names": ["Stonebreakers", "The Stone Breakers"],
+    "years": [1849]
+  },
+  {
+    "src": "/paintings/themeeting.jpg",
+    "artist": "Gustave Courbet",
+    "names": ["The Meeting", "Bonjour, Monsieur Courbet"],
+    "years": [1854]
+  },
+  {
+    "src": "/paintings/burial_ornans.jpg",
+    "artist": "Gustave Courbet",
+    "names": ["A Burial at Ornans", "Un enterrement à Ornans"],
+    "years": [1849, 1850]
+  },
+  {
+    "src": "/paintings/painters_studio.jpg",
+    "artist": "Gustave Courbet",
+    "names": ["The Painter's Studio"],
+    "years": [1855]
+  },
+  {
+    "src": "/paintings/absinthe_drinker.jpg",
+    "artist": "Edouard Manet",
+    "names": ["The Absinthe Drinker"],
+    "years": [1859]
+  },
+  {
+    "src": "/paintings/street_singer.jpg",
+    "artist": "Edouard Manet",
+    "names": ["The Street Singer"],
+    "years": [1862]
+  },
+  {
+    "src": "/paintings/luncheon.jpg",
+    "artist": "Edouard Manet",
+    "names": ["The Luncheon on the Grass", "Le Déjeuner sur l'herbe"],
+    "years": [1863]
+  },
+  {
+    "src": "/paintings/olympia.jpg",
+    "artist": "Edouard Manet",
+    "names": ["Olympia"],
+    "years": [1863]
+  },
+  {
+    "src": "/paintings/dead_christ.jpg",
+    "artist": "Edouard Manet",
+    "names": ["The Dead Christ with Angels", "Le Christ mort et les anges"],
+    "years": [1864]
+  },
+  {
+    "src": "/paintings/execution.jpg",
+    "artist": "Edouard Manet",
+    "names": ["The Execution of Emperor Maximilian"],
+    "years": [1867,1868,1869]
+  },
+  {
+    "src": "/paintings/bar_folies.jpg",
+    "artist": "Edouard Manet",
+    "names": ["A Bar at the Folies-Bergère", "Un bar aux Folies Bergère"],
+    "years": [1882]
+  },
+  {
+    "src": "/paintings/dou_venons_nous.jpg",
+    "artist": "Paul Gauguin",
+    "names": ["D'où venons-nous"],
+    "years": [1897]
+  },
+  {
+    "src": "/paintings/bellelli_family.jpg",
+    "artist": "Edgar Degas",
+    "names": ["The Bellelli Family"],
+    "years": [1858,1859,1860]
+  },
+  {
+    "src": "/paintings/bellelli_family.jpg",
+    "artist": "Edgar Degas",
+    "names": ["The Bellelli Family"],
+    "years": [1858,1859,1860]
+  },
+  {
+    "src": "/paintings/breton_girls.jpg",
+    "artist": "Edgar Degas",
+    "names": ["Landscape with Two Breton Girls"],
+    "years": [1889]
+  }
+]
