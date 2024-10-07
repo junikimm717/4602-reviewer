@@ -14,6 +14,9 @@ points.
 
 # Contribution
 
+Note that this project uses [git lfs](https://git-lfs.com/), so you will need
+that installed on your system!
+
 ## Setup
 
 This is a standard vite project, so the following installation instructions
