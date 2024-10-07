@@ -14,11 +14,27 @@ export default function HomePage() {
   if (runningState === RunningGameState.Running) return null;
   return (
     <>
-      <div className="flex flex-row flex-wrap gap-2">
+      <div className="mb-3">
+        <p>
+          A site to help study image identifications for the upcoming 4.602
+          midterm!
+        </p>
+        <p>
+          Help contribute to this site (and our paintings database) on{" "}
+          <a
+            href="https://github.com/junikimm717/4602-reviewer"
+            className="underline"
+            target="_blank"
+          >
+            GitHub!
+          </a>
+        </p>
+      </div>
+      <div className="flex flex-row flex-wrap gap-2 justify-center">
         {timeOptions.map((time, idx: number) => (
           <div key={idx}>
             <button
-              className={`rounded-lg font-bold px-2 py-1 ${seconds === time[0] ? "bg-blue-300" : "bg-gray-300"}`}
+              className={`rounded-lg font-bold px-2 py-1 duration-200 ${seconds === time[0] ? "bg-black text-white" : "bg-gray-300"}`}
               onClick={() => setSeconds(time[0])}
             >
               {time[1]}
@@ -26,9 +42,9 @@ export default function HomePage() {
           </div>
         ))}
       </div>
-      <div>
+      <div className="flex justify-center items-center">
         <button
-          className="bg-green-800 hover:bg-green-700 text-white text-3xl px-4 py-3 my-2 rounded-lg font-bold"
+          className="bg-green-700 hover:bg-green-900 text-white text-3xl px-4 py-3 my-2 rounded-lg font-bold duration-200"
           onClick={() => startNewGame(seconds)}
         >
           Start!

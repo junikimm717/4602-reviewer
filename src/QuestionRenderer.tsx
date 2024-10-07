@@ -26,14 +26,14 @@ export function FreeResponseRenderer() {
         placeholder="artist"
         value={artist}
         onChange={(e) => setArtist(e.target.value)}
-        className="my-2"
+        className="my-2 text-[16px]"
         key={currentQuestion!.answer.src + "artist"}
       />
       <Input
         placeholder="name"
         value={name}
         onChange={(e) => setName(e.target.value)}
-        className="my-2"
+        className="my-2 text-[16px]"
         key={currentQuestion!.answer.src + "name"}
       />
       <Button

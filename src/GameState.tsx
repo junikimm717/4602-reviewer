@@ -134,7 +134,7 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
           ? 1
           : response[painting.src] + 1,
       });
-      const multiplier = currentQuestion.type === QuestionType.FreeResponse ? 2 : 1;
+      const multiplier = currentQuestion.type === QuestionType.FreeResponse ? 3 : 1;
       setScore((s) => {
         localStorage.setItem("reviewer:score", String(s + multiplier));
         return s + multiplier;

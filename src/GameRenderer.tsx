@@ -40,7 +40,7 @@ export default function GameRenderer() {
             <>
               <img
                 src={currentQuestion.answer.src}
-                className="max-h-[400px] mx-auto"
+                className="max-h-[300px] mx-auto"
               />
               {currentQuestion.type === QuestionType.FreeResponse ? (
                 <FreeResponseRenderer />
@@ -50,7 +50,7 @@ export default function GameRenderer() {
                 <MultipleChoiceRenderer />
               )}
               {answeredState === AnsweredState.NotAnswered ? null : (
-                <div className="text-base">
+                <div className="text-base my-2">
                   {answeredState === AnsweredState.Correct ? (
                     <div className="font-bold text-green-800 text-base">
                       Correct!
