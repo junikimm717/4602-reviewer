@@ -54,9 +54,15 @@ const useGameState = () => useContext(GameManagerContext);
 
 export function GameManagerProvider(props: { children: React.ReactNode }) {
   const { timerGoing, quitNow, startNow } = useTimerState();
-  const [correct, setCorrect] = useState<{ [name: string]: number }>({});
-  const [inCorrect, setInCorrect] = useState<{ [name: string]: number }>({});
-  const [timeGiven, setTimeGiven] = useState<number>(getStoredInt("reviewer:timeGiven"));
+  const [correct, setCorrect] = useState<{ [name: string]: number }>(
+    JSON.parse(localStorage.getItem("reviewer:responses") || "{}"),
+  );
+  const [inCorrect, setInCorrect] = useState<{ [name: string]: number }>(
+    JSON.parse(localStorage.getItem("reviewer:incorrect") || "{}"),
+  );
+  const [timeGiven, setTimeGiven] = useState<number>(
+    getStoredInt("reviewer:timeGiven"),
+  );
   const [currentQuestion, setCurrentQuestion] = useState<Question | undefined>(
     undefined,
   );
@@ -90,12 +96,12 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
   const reset = () => {
     setRunningState(RunningGameState.NotStarted);
     setCurrentQuestion(undefined);
-  }
+  };
 
   const deleteProgress = () => {
     setCorrect({});
     setInCorrect({});
-  }
+  };
 
   const quitGame = () => {
     if (runningState !== RunningGameState.Running) return;
@@ -119,7 +125,7 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
     if (!timerGoing && runningState === RunningGameState.Running) {
       setRunningState(RunningGameState.Ended);
     }
-  }, [timerGoing])
+  }, [timerGoing]);
 
   useEffect(() => {
     if (timerGoing && !currentQuestion) {
@@ -140,27 +146,29 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
   }, [inCorrect]);
 
   const answerCurrentQuestion = (response: any) => {
-    if (!currentQuestion || runningState !== RunningGameState.Running || answeredState !== AnsweredState.NotAnswered) return;
+    if (
+      !currentQuestion ||
+      runningState !== RunningGameState.Running ||
+      answeredState !== AnsweredState.NotAnswered
+    )
+      return;
     const painting = currentQuestion.answer;
     if (currentQuestion.checker(response)) {
-      setCorrect(c => ({
+      setCorrect((c) => ({
         ...c,
-        [painting.src]: isNaN(c[painting.src] + 1)
-          ? 1
-          : c[painting.src] + 1,
+        [painting.src]: isNaN(c[painting.src] + 1) ? 1 : c[painting.src] + 1,
       }));
-      const multiplier = currentQuestion.type === QuestionType.FreeResponse ? 3 : 1;
+      const multiplier =
+        currentQuestion.type === QuestionType.FreeResponse ? 3 : 1;
       setScore((s) => {
         localStorage.setItem("reviewer:score", String(s + multiplier));
         return s + multiplier;
       });
       setAnsweredState(AnsweredState.Correct);
     } else {
-      setInCorrect(ic => ({
+      setInCorrect((ic) => ({
         ...ic,
-        [painting.src]: isNaN(ic[painting.src] + 1)
-          ? 1
-          : ic[painting.src] + 1,
+        [painting.src]: isNaN(ic[painting.src] + 1) ? 1 : ic[painting.src] + 1,
       }));
       setAnsweredState(AnsweredState.Incorrect);
     }
