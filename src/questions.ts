@@ -15,7 +15,7 @@ export interface Painting {
 
 export interface Question {
   type: QuestionType;
-  answer: Painting,
+  answer: Painting;
   choices?: any[];
   // how should we display what the correct answer actually is?
   correctResponse?: any;
@@ -34,22 +34,26 @@ export interface GeneratingProps {
 
 const YEARS_DELTA = 5;
 const allYears: number[] = (() => {
-  const presentYears = AllPaintings.map((x) => x.years).reduce(
-    (a, b) => a.concat(b),
-    [],
-  );
+  const presentYears = AllPaintings.map((x) => x.years).reduce((a, b) => a.concat(b), []);
   const moreOptions = presentYears
-    .map((x) => Array(2*YEARS_DELTA + 3).fill(0).map((_,idx) => x + idx - YEARS_DELTA))
+    .map((x) =>
+      Array(2 * YEARS_DELTA + 3)
+        .fill(0)
+        .map((_, idx) => x + idx - YEARS_DELTA)
+    )
     .reduce((a, b) => a.concat(b), [])
     .sort();
   const distinctOptions = moreOptions.filter(
-    (val, idx) => idx === 0 || val != moreOptions[idx - 1],
+    (val, idx) => idx === 0 || val != moreOptions[idx - 1]
   );
   return distinctOptions;
 })();
 
 function scrambleArray(arr: any[]): any[] {
-  return arr.map(x => [Math.random(), x]).sort((a,b) => a[0] - b[0]).map(x => x[1])
+  return arr
+    .map((x) => [Math.random(), x])
+    .sort((a, b) => a[0] - b[0])
+    .map((x) => x[1]);
 }
 
 export function sampleNPaintings(answerIndex: number, choices: number): Painting[] {
@@ -80,13 +84,15 @@ export function sampleYears(years: number[], choices: number): number[] {
       }
     }
   }
-  return scrambleArray(options)
+  return scrambleArray(options);
 }
 
 export function pickPainting(props: GeneratingProps): [Painting, number] {
-  const {correct, inCorrect} = props;
-  const probabilities = AllPaintings.map((painting) =>
-    (1 + (inCorrect[painting.src] || 0)) / (1 + (correct[painting.src] || 0))
+  const { correct, inCorrect } = props;
+  const probabilities = AllPaintings.map(
+    (painting) =>
+      (1 + 3 * Math.max(inCorrect[painting.src] || 0, 0)) /
+      (1 + Math.max(correct[painting.src] || 0, 0))
   );
   const probsum = probabilities.reduce((a, b) => a + b, 0);
   const randomNumber = Math.random() * probsum;
@@ -95,7 +101,7 @@ export function pickPainting(props: GeneratingProps): [Painting, number] {
     if (cursum < randomNumber && randomNumber < cursum + probabilities[idx]) {
       return [AllPaintings[idx], idx];
     } else {
-      cursum += probabilities[idx]
+      cursum += probabilities[idx];
     }
   }
   return [AllPaintings[AllPaintings.length - 1], AllPaintings.length - 1];

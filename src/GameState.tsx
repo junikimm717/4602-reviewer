@@ -55,25 +55,19 @@ const useGameState = () => useContext(GameManagerContext);
 export function GameManagerProvider(props: { children: React.ReactNode }) {
   const { timerGoing, quitNow, startNow } = useTimerState();
   const [correct, setCorrect] = useState<{ [name: string]: number }>(
-    JSON.parse(localStorage.getItem("reviewer:responses") || "{}"),
+    JSON.parse(localStorage.getItem("reviewer:responses") || "{}")
   );
   const [inCorrect, setInCorrect] = useState<{ [name: string]: number }>(
-    JSON.parse(localStorage.getItem("reviewer:incorrect") || "{}"),
+    JSON.parse(localStorage.getItem("reviewer:incorrect") || "{}")
   );
-  const [timeGiven, setTimeGiven] = useState<number>(
-    getStoredInt("reviewer:timeGiven"),
-  );
-  const [currentQuestion, setCurrentQuestion] = useState<Question | undefined>(
-    undefined,
-  );
+  const [timeGiven, setTimeGiven] = useState<number>(getStoredInt("reviewer:timeGiven"));
+  const [currentQuestion, setCurrentQuestion] = useState<Question | undefined>(undefined);
   // score functions
   const [score, setScore] = useState<number>(getStoredInt("reviewer:score"));
   const [runningState, setRunningState] = useState<RunningGameState>(
-    getStoredInt("reviewer:gamestate"),
+    getStoredInt("reviewer:gamestate")
   );
-  const [answeredState, setAnsweredState] = useState<AnsweredState>(
-    AnsweredState.NotAnswered,
-  );
+  const [answeredState, setAnsweredState] = useState<AnsweredState>(AnsweredState.NotAnswered);
 
   const newQuestion = () => {
     const generatingProps = {
@@ -158,8 +152,7 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
         ...c,
         [painting.src]: isNaN(c[painting.src] + 1) ? 1 : c[painting.src] + 1,
       }));
-      const multiplier =
-        currentQuestion.type === QuestionType.FreeResponse ? 3 : 1;
+      const multiplier = currentQuestion.type === QuestionType.FreeResponse ? 3 : 1;
       setScore((s) => {
         localStorage.setItem("reviewer:score", String(s + multiplier));
         return s + multiplier;

@@ -16,10 +16,7 @@ export default function HomePage() {
   return (
     <>
       <div className="mb-3">
-        <p>
-          A site to help study image identifications for the upcoming 4.602
-          midterm!
-        </p>
+        <p>A site to help study image identifications for the upcoming 4.602 midterm!</p>
         <p>
           Help contribute to this site (and our paintings database) on{" "}
           <a

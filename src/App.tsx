@@ -1,13 +1,10 @@
-import React, { useState, createContext } from 'react'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import React, { useState, createContext } from "react";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import { TimerContextProvider } from './TimerState';
-import { GameManagerProvider } from './GameState';
-import GameRenderer from './GameRenderer';
-import Page from './Page';
+import { TimerContextProvider } from "./TimerState";
+import { GameManagerProvider } from "./GameState";
+import GameRenderer from "./GameRenderer";
+import Page from "./Page";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +24,7 @@ function App() {
         </GameManagerProvider>
       </TimerContextProvider>
     </React.StrictMode>
-  )
+  );
 }
 
-export default App
+export default App;

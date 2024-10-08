@@ -25,12 +25,8 @@ export default function Analytics() {
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>
-                Are you sure you want to delete all your progress?
-              </DialogTitle>
-              <DialogDescription>
-                This action cannot be undone.
-              </DialogDescription>
+              <DialogTitle>Are you sure you want to delete all your progress?</DialogTitle>
+              <DialogDescription>This action cannot be undone.</DialogDescription>
             </DialogHeader>
             <DialogClose className="flex gap-4 justify-center">
               <Button variant="outline">Cancel</Button>
@@ -82,11 +78,7 @@ function squareColor(correct: number, inCorrect: number): string {
   return config[Math.floor((config.length - 1) / 2)][1];
 }
 
-function RenderSquare(props: {
-  painting: Painting;
-  correct: number;
-  inCorrect: number;
-}) {
+function RenderSquare(props: { painting: Painting; correct: number; inCorrect: number }) {
   return (
     <div
       className={`group opacity-100 cursor-pointer hover:bg-opacity-50 w-[20px] h-[20px] rounded-sm relative ${squareColor(props.correct, props.inCorrect)}`}
@@ -95,10 +87,7 @@ function RenderSquare(props: {
         className={`absolute group-hover:block text-sm hidden z-50 top-[20px] bg-gray-100 rounded-lg w-[150px] p-2 duration-200`}
       >
         <div className="font-bold">{props.painting.artist}</div>
-        <a
-          className="italic underline hover:text-blue-900"
-          href={props.painting.src}
-        >
+        <a className="italic underline hover:text-blue-900" href={props.painting.src}>
           {props.painting.names[0]}
         </a>
         <div>(painted in {JSON.stringify(props.painting.years)})</div>

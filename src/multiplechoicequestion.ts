@@ -1,8 +1,15 @@
-import { GeneratingProps, Painting, pickPainting, Question, QuestionType, sampleNPaintings } from "./questions";
+import {
+  GeneratingProps,
+  Painting,
+  pickPainting,
+  Question,
+  QuestionType,
+  sampleNPaintings,
+} from "./questions";
 
 export const paintingToChoice = (p: Painting) => {
-  return (p.artist + ', ' + p.names[0])
-}
+  return p.artist + ", " + p.names[0];
+};
 
 export function pickMultipleChoiceQuestion(props: GeneratingProps): Question {
   const [painting, paintingIndex] = pickPainting(props);

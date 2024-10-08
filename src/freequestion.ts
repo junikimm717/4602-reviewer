@@ -1,35 +1,38 @@
-import {
-  GeneratingProps,
-  pickPainting,
-  Question,
-  QuestionType,
-} from "./questions";
-import stopWords from '../stopwords.json';
+import { GeneratingProps, pickPainting, Question, QuestionType } from "./questions";
+import stopWords from "../stopwords.json";
 
 const stopWordsMap = new Set<string>(stopWords);
 
-const preprocess = (str: string) => str
+const preprocess = (str: string) =>
+  str
     .normalize("NFD")
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
-    .trim()
+    .trim();
 
 function checkName(response: string, name: string) {
-  const nameComps = preprocess(name).split(/\s+/).filter(x => !stopWordsMap.has(x));
-  const responseComps = preprocess(response).split(/\s+/).filter(x => !stopWordsMap.has(x));
+  const nameComps = preprocess(name)
+    .split(/\s+/)
+    .filter((x) => !stopWordsMap.has(x));
+  const responseComps = preprocess(response)
+    .split(/\s+/)
+    .filter((x) => !stopWordsMap.has(x));
   if (nameComps.length !== responseComps.length) {
     return false;
   }
   for (let i = 0; i < responseComps.length; i++) {
-    if (nameComps[i] !== responseComps[i])
-      return false;
+    if (nameComps[i] !== responseComps[i]) return false;
   }
   return true;
 }
 
 function checkArtist(response: string, artist: string) {
-  const artistComps = preprocess(artist).split(/\s+/).filter(x => !stopWordsMap.has(x));
-  const responseComps = preprocess(response).split(/\s+/).filter(x => !stopWordsMap.has(x));
+  const artistComps = preprocess(artist)
+    .split(/\s+/)
+    .filter((x) => !stopWordsMap.has(x));
+  const responseComps = preprocess(response)
+    .split(/\s+/)
+    .filter((x) => !stopWordsMap.has(x));
 
   return artistComps.pop() === responseComps.pop();
 }

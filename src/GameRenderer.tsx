@@ -20,14 +20,8 @@ import {
 } from "./QuestionRenderer";
 
 export default function GameRenderer() {
-  const {
-    runningState,
-    currentQuestion,
-    newQuestion,
-    quitGame,
-    reset,
-    answeredState,
-  } = useGameState();
+  const { runningState, currentQuestion, newQuestion, quitGame, reset, answeredState } =
+    useGameState();
   if (runningState === RunningGameState.NotStarted) {
     return <HomePage />;
   }
@@ -38,10 +32,7 @@ export default function GameRenderer() {
         <div className="mx-auto">
           {currentQuestion && runningState === RunningGameState.Running && (
             <>
-              <img
-                src={currentQuestion.answer.src}
-                className="max-h-[300px] mx-auto"
-              />
+              <img src={currentQuestion.answer.src} className="max-h-[300px] mx-auto" />
               {currentQuestion.type === QuestionType.FreeResponse ? (
                 <FreeResponseRenderer />
               ) : currentQuestion.type === QuestionType.YearChoice ? (
@@ -52,16 +43,13 @@ export default function GameRenderer() {
               {answeredState === AnsweredState.NotAnswered ? null : (
                 <div className="text-base my-2">
                   {answeredState === AnsweredState.Correct ? (
-                    <div className="font-bold text-green-800 text-base">
-                      Correct!
-                    </div>
+                    <div className="font-bold text-green-800 text-base">Correct!</div>
                   ) : (
                     <div className="font-bold text-red-800">Incorrect!</div>
                   )}
                   <div>
-                    {currentQuestion?.answer.artist},{" "}
-                    <em>{currentQuestion?.answer.names[0]}</em>, painted in{" "}
-                    {JSON.stringify(currentQuestion?.answer.years)}
+                    {currentQuestion?.answer.artist}, <em>{currentQuestion?.answer.names[0]}</em>,
+                    painted in {JSON.stringify(currentQuestion?.answer.years)}
                   </div>
                 </div>
               )}
@@ -90,12 +78,8 @@ export default function GameRenderer() {
               </DialogTrigger>
               <DialogContent>
                 <DialogHeader>
-                  <DialogTitle>
-                    Are you sure you want to quit this game?
-                  </DialogTitle>
-                  <DialogDescription>
-                    This action cannot be undone.
-                  </DialogDescription>
+                  <DialogTitle>Are you sure you want to quit this game?</DialogTitle>
+                  <DialogDescription>This action cannot be undone.</DialogDescription>
                 </DialogHeader>
                 <DialogClose className="flex gap-4 justify-center">
                   <Button variant="outline">Cancel</Button>

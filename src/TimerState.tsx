@@ -22,11 +22,9 @@ export const TimerContextProvider = (props: { children: React.ReactNode }) => {
   const [endTime, setEndTime] = useState<Date | undefined>(
     isNaN(Number(localStorage.getItem("reviewer:endTime")))
       ? undefined
-      : new Date(Number(localStorage.getItem("reviewer:endTime"))),
+      : new Date(Number(localStorage.getItem("reviewer:endTime")))
   );
-  const [timerGoing, setTimerGoing] = useState<boolean>(
-    !!endTime && endTime > new Date(),
-  );
+  const [timerGoing, setTimerGoing] = useState<boolean>(!!endTime && endTime > new Date());
 
   useEffect(() => {
     if (!endTime) return;
