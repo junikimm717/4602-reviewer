@@ -1,5 +1,7 @@
 # 4.602 Reviewer
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f33c7d17-f7c7-45b6-b95b-ddfb487a6469/deploy-status)](https://app.netlify.com/sites/splendid-tartufo-bfb05f/deploys)
+
 Site to help me grind image identifications for MIT
 [4.602](https://ocw.mit.edu/courses/4-602-modern-art-and-mass-culture-spring-2012/)
 exams. Currently, there are three different types of questions I have

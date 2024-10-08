@@ -74,15 +74,15 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
       correct,
       inCorrect,
     };
-    switch (Math.floor(3 * Math.random())) {
+    switch (Math.floor(4 * Math.random())) {
       case 0:
         setCurrentQuestion(pickMultipleChoiceQuestion(generatingProps));
         break;
       case 1:
-        setCurrentQuestion(pickFreeQuestion(generatingProps));
+        setCurrentQuestion(pickYearChoiceQuestion(generatingProps));
         break;
       default:
-        setCurrentQuestion(pickYearChoiceQuestion(generatingProps));
+        setCurrentQuestion(pickFreeQuestion(generatingProps));
     }
     setAnsweredState(AnsweredState.NotAnswered);
   };
