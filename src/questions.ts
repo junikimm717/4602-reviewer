@@ -24,7 +24,10 @@ export interface Question {
 }
 
 export interface GeneratingProps {
-  responses: {
+  correct: {
+    [name: string]: number;
+  };
+  inCorrect: {
     [name: string]: number;
   };
 }
@@ -81,10 +84,10 @@ export function sampleYears(years: number[], choices: number): number[] {
 }
 
 export function pickPainting(props: GeneratingProps): [Painting, number] {
-  const responses = props.responses
-  const probabilities = AllPaintings.map((painting) => {
-    return painting.src in responses ? 1 / (1 + responses[painting.src]) : 1;
-  });
+  const {correct, inCorrect} = props;
+  const probabilities = AllPaintings.map((painting) =>
+    (1 + (inCorrect[painting.src] || 0)) / (1 + (correct[painting.src] || 0))
+  );
   const probsum = probabilities.reduce((a, b) => a + b, 0);
   const randomNumber = Math.random() * probsum;
   let cursum = 0;

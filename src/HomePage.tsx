@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useGameState, { RunningGameState } from "./GameState";
+import Analytics from "./Analytics";
 
 const timeOptions: [number, string][] = [
   [60, "1 minute"],
@@ -50,6 +51,7 @@ export default function HomePage() {
           Start!
         </button>
       </div>
+      <Analytics />
     </>
   );
 }

@@ -25,10 +25,13 @@ interface GameManagerContextType {
   quitGame: () => any;
   startNewGame: (seconds: number) => any;
   reset: () => any;
+  deleteProgress: () => any;
   score: number;
   runningState: RunningGameState;
   answeredState: AnsweredState;
   timeGiven: number;
+  correct: { [name: string]: number };
+  inCorrect: { [name: string]: number };
 }
 
 const GameManagerContext = createContext<GameManagerContextType>({
@@ -39,16 +42,20 @@ const GameManagerContext = createContext<GameManagerContextType>({
   startNewGame: (_) => null,
   score: 0,
   reset: () => null,
+  deleteProgress: () => null,
   runningState: 0,
   answeredState: 0,
   timeGiven: 0,
+  correct: {},
+  inCorrect: {},
 });
 
 const useGameState = () => useContext(GameManagerContext);
 
 export function GameManagerProvider(props: { children: React.ReactNode }) {
   const { timerGoing, quitNow, startNow } = useTimerState();
-  const [responses, setResponses] = useState<{ [name: string]: number }>({});
+  const [correct, setCorrect] = useState<{ [name: string]: number }>({});
+  const [inCorrect, setInCorrect] = useState<{ [name: string]: number }>({});
   const [timeGiven, setTimeGiven] = useState<number>(getStoredInt("reviewer:timeGiven"));
   const [currentQuestion, setCurrentQuestion] = useState<Question | undefined>(
     undefined,
@@ -64,7 +71,8 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
 
   const newQuestion = () => {
     const generatingProps = {
-      responses,
+      correct,
+      inCorrect,
     };
     switch (Math.floor(3 * Math.random())) {
       case 0:
@@ -82,7 +90,11 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
   const reset = () => {
     setRunningState(RunningGameState.NotStarted);
     setCurrentQuestion(undefined);
-    setResponses({});
+  }
+
+  const deleteProgress = () => {
+    setCorrect({});
+    setInCorrect({});
   }
 
   const quitGame = () => {
@@ -97,7 +109,6 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
     startNow(seconds);
     setTimeGiven(seconds);
     setRunningState(RunningGameState.Running);
-    setResponses({});
     newQuestion();
     setScore(0);
     localStorage.setItem("reviewer:score", "0");
@@ -121,19 +132,23 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
   }, [runningState]);
 
   useEffect(() => {
-    localStorage.setItem("reviewer:responses", JSON.stringify(responses));
-  }, [responses]);
+    localStorage.setItem("reviewer:responses", JSON.stringify(correct));
+  }, [correct]);
+
+  useEffect(() => {
+    localStorage.setItem("reviewer:incorrect", JSON.stringify(inCorrect));
+  }, [inCorrect]);
 
   const answerCurrentQuestion = (response: any) => {
     if (!currentQuestion || runningState !== RunningGameState.Running || answeredState !== AnsweredState.NotAnswered) return;
     const painting = currentQuestion.answer;
     if (currentQuestion.checker(response)) {
-      setResponses({
-        ...response,
-        [painting.src]: isNaN(response[painting.src] + 1)
+      setCorrect(c => ({
+        ...c,
+        [painting.src]: isNaN(c[painting.src] + 1)
           ? 1
-          : response[painting.src] + 1,
-      });
+          : c[painting.src] + 1,
+      }));
       const multiplier = currentQuestion.type === QuestionType.FreeResponse ? 3 : 1;
       setScore((s) => {
         localStorage.setItem("reviewer:score", String(s + multiplier));
@@ -141,6 +156,12 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
       });
       setAnsweredState(AnsweredState.Correct);
     } else {
+      setInCorrect(ic => ({
+        ...ic,
+        [painting.src]: isNaN(ic[painting.src] + 1)
+          ? 1
+          : ic[painting.src] + 1,
+      }));
       setAnsweredState(AnsweredState.Incorrect);
     }
   };
@@ -158,6 +179,9 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
         answeredState,
         reset,
         timeGiven,
+        correct,
+        inCorrect,
+        deleteProgress,
       }}
     >
       {props.children}

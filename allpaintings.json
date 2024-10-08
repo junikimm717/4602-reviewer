@@ -38,7 +38,7 @@
   {
     "src": "/paintings/liberty_barricades.jpg",
     "artist": "Eugène Delacroix",
-    "names": ["Liberty on the Barricades", "Liberty Leading the People"],
+    "names": ["Liberty at the Barricades", "Liberty Leading the People"],
     "years": [1830]
   },
   {
@@ -133,13 +133,7 @@
   },
   {
     "src": "/paintings/bellelli_family.jpg",
-    "artist": "Edgar Degas",
-    "names": ["The Bellelli Family"],
-    "years": [1858,1859,1860]
-  },
-  {
-    "src": "/paintings/bellelli_family.jpg",
-    "artist": "Edgar Degas",
+    "artist": "Paul Gauguin",
     "names": ["The Bellelli Family"],
     "years": [1858,1859,1860]
   },

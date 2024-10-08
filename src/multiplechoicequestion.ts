@@ -6,7 +6,7 @@ export const paintingToChoice = (p: Painting) => {
 
 export function pickMultipleChoiceQuestion(props: GeneratingProps): Question {
   const [painting, paintingIndex] = pickPainting(props);
-  const choices = sampleNPaintings(paintingIndex, 4);
+  const choices = sampleNPaintings(paintingIndex, 5);
   // the person will input an artist and the name of the painting.
   const checker = (response: string) => {
     return response === paintingToChoice(painting);
