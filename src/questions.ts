@@ -107,10 +107,12 @@ export function sampleYears(years: number[], choices: number): number[] {
 
 export function pickPainting(props: GeneratingProps): [Painting, number] {
   const { correct, inCorrect } = props;
-  const probabilities = AllPaintings.map(
-    (painting) =>
+  const probabilities = AllPaintings.map((painting) => {
+    if ((inCorrect[painting.src] || 0) + (correct[painting.src] || 0) <= 3) return 10;
+    return (
       (1 + 3 * Math.max(inCorrect[painting.src] || 0, 0)) /
       (1 + Math.max(correct[painting.src] || 0, 0))
-  );
-  return PickFromProbabilities(AllPaintings, probabilities)
+    );
+  });
+  return PickFromProbabilities(AllPaintings, probabilities);
 }
