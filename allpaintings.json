@@ -180,7 +180,7 @@
     "years": [1872]
   },
   {
-    "src": "/paintings/",
+    "src": "/paintings/morisot_powder.png",
     "artist": "Berthe Morisot",
     "names": ["Young Woman Powdering her Face"],
     "years": [1877]
@@ -240,7 +240,7 @@
     "years": [1876]
   },
   {
-    "src": "/paintings/",
+    "src": "/paintings/nympheas.png",
     "artist": "Claude Monet",
     "names": ["Water Lilies","Nympheas"],
     "years": [1905]
