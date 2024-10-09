@@ -44,7 +44,7 @@ export default function Analytics() {
           </DialogContent>
         </Dialog>
       </h2>
-      <div className="flex flex-row flex-wrap gap-1 my-2 justify-center">
+      <div className="flex flex-row flex-wrap gap-1 mx-auto my-2 justify-center w-[80%]">
         {AllPaintings.map((painting) => (
           <RenderSquare
             key={painting.src}
