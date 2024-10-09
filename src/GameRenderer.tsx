@@ -20,8 +20,15 @@ import {
 } from "./QuestionRenderer";
 
 export default function GameRenderer() {
-  const { runningState, currentQuestion, newQuestion, quitGame, reset, answeredState } =
-    useGameState();
+  const {
+    runningState,
+    currentQuestion,
+    newQuestion,
+    quitGame,
+    reset,
+    answeredState,
+    questionNumber,
+  } = useGameState();
   if (runningState === RunningGameState.NotStarted) {
     return <HomePage />;
   }
@@ -34,11 +41,11 @@ export default function GameRenderer() {
             <>
               <img src={currentQuestion.answer.src} className="max-h-[300px] mx-auto" />
               {currentQuestion.type === QuestionType.FreeResponse ? (
-                <FreeResponseRenderer />
+                <FreeResponseRenderer key={questionNumber} />
               ) : currentQuestion.type === QuestionType.YearChoice ? (
-                <YearChoiceRenderer />
+                <YearChoiceRenderer key={questionNumber} />
               ) : (
-                <MultipleChoiceRenderer />
+                <MultipleChoiceRenderer key={questionNumber} />
               )}
               {answeredState === AnsweredState.NotAnswered ? null : (
                 <div className="text-base my-2">

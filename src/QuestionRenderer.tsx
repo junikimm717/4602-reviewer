@@ -27,7 +27,7 @@ export function FreeResponseRenderer() {
         key={currentQuestion!.answer.src + "artist"}
       />
       <Input
-        placeholder="name"
+        placeholder="title"
         value={name}
         onChange={(e) => setName(e.target.value)}
         className="my-2 text-[16px]"
@@ -49,7 +49,7 @@ export function MultipleChoiceRenderer() {
   const [response, setResponse] = useState<string | undefined>(undefined);
   return (
     <div className="my-5">
-      <h1 className="text-2xl">Identify the author and painting of this image.</h1>
+      <h1 className="text-2xl">Identify the author and title of this image.</h1>
       <Select onValueChange={(value) => setResponse(value)}>
         <SelectTrigger className="w-[min(100%,500px)] my-2">
           <SelectValue placeholder="Painting" />
@@ -86,7 +86,7 @@ export function YearChoiceRenderer() {
           <SelectValue placeholder="Year" />
         </SelectTrigger>
         <SelectContent>
-          {currentQuestion!.choices!.map((year: number, idx: number) => (
+          {currentQuestion!.choices!.sort().map((year: number, idx: number) => (
             <SelectItem value={String(year)} key={idx}>
               {year}
             </SelectItem>

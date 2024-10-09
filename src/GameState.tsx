@@ -27,6 +27,7 @@ interface GameManagerContextType {
   reset: () => any;
   deleteProgress: () => any;
   score: number;
+  questionNumber: number;
   runningState: RunningGameState;
   answeredState: AnsweredState;
   timeGiven: number;
@@ -48,6 +49,7 @@ const GameManagerContext = createContext<GameManagerContextType>({
   timeGiven: 0,
   correct: {},
   inCorrect: {},
+  questionNumber: 0,
 });
 
 const useGameState = () => useContext(GameManagerContext);
@@ -60,6 +62,7 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
   const [inCorrect, setInCorrect] = useState<{ [name: string]: number }>(
     JSON.parse(localStorage.getItem("reviewer:incorrect") || "{}")
   );
+  const [questionNumber, setQuestionNumber] = useState<number>(0);
   const [timeGiven, setTimeGiven] = useState<number>(getStoredInt("reviewer:timeGiven"));
   const [currentQuestion, setCurrentQuestion] = useState<Question | undefined>(undefined);
   // score functions
@@ -85,6 +88,7 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
         setCurrentQuestion(pickFreeQuestion(generatingProps));
     }
     setAnsweredState(AnsweredState.NotAnswered);
+    setQuestionNumber((q) => q + 1);
   };
 
   const reset = () => {
@@ -183,6 +187,7 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
         correct,
         inCorrect,
         deleteProgress,
+        questionNumber,
       }}
     >
       {props.children}
