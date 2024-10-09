@@ -1,17 +1,16 @@
 import { GeneratingProps, pickPainting, Question, QuestionType, sampleYears } from "./questions";
 
-export function pickYearChoiceQuestion(props: GeneratingProps): Question {
+export function pickFreeYearQuestion(props: GeneratingProps): Question {
   const [painting, _] = pickPainting(props);
   const choices = sampleYears(painting.years, 6);
-  // the person will input an artist and the name of the painting.
   const checker = (response: number) => {
-    return painting.years.findIndex((o) => o === response) != -1;
+    return painting.years.findIndex((o) => Math.floor(o/10) === Math.floor(response/10)) != -1;
   };
   return {
-    type: QuestionType.YearChoice,
+    type: QuestionType.FreeYear,
     answer: painting,
     choices,
     checker,
-    points: 1,
+    points: 2,
   };
 }

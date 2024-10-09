@@ -1,10 +1,14 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { Question, QuestionType } from "./questions";
+import { PickFromProbabilities, Question, QuestionType } from "./questions";
 import useTimerState from "./TimerState";
 import { pickMultipleChoiceQuestion } from "./multiplechoicequestion";
 import { pickFreeQuestion } from "./freequestion";
 import { pickYearChoiceQuestion } from "./yearquestion";
 import { getStoredInt } from "./utils";
+import { pickFreeYearQuestion } from "./freeyear";
+
+const PICKERS = [pickMultipleChoiceQuestion, pickFreeQuestion, pickYearChoiceQuestion, pickFreeYearQuestion]
+const PICKER_PROBS = [1, 3, 1, 2]
 
 export enum RunningGameState {
   NotStarted = 0,
@@ -77,16 +81,8 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
       correct,
       inCorrect,
     };
-    switch (Math.floor(4 * Math.random())) {
-      case 0:
-        setCurrentQuestion(pickMultipleChoiceQuestion(generatingProps));
-        break;
-      case 1:
-        setCurrentQuestion(pickYearChoiceQuestion(generatingProps));
-        break;
-      default:
-        setCurrentQuestion(pickFreeQuestion(generatingProps));
-    }
+    const [picker] = PickFromProbabilities(PICKERS, PICKER_PROBS)
+    setCurrentQuestion(picker(generatingProps));
     setAnsweredState(AnsweredState.NotAnswered);
     setQuestionNumber((q) => q + 1);
   };
@@ -156,10 +152,9 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
         ...c,
         [painting.src]: isNaN(c[painting.src] + 1) ? 1 : c[painting.src] + 1,
       }));
-      const multiplier = currentQuestion.type === QuestionType.FreeResponse ? 3 : 1;
       setScore((s) => {
-        localStorage.setItem("reviewer:score", String(s + multiplier));
-        return s + multiplier;
+        localStorage.setItem("reviewer:score", String(s + currentQuestion.points));
+        return s + currentQuestion.points;
       });
       setAnsweredState(AnsweredState.Correct);
     } else {

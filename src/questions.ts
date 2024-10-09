@@ -4,6 +4,7 @@ export enum QuestionType {
   MultipleChoice = 0,
   FreeResponse = 1,
   YearChoice = 2,
+  FreeYear = 3,
 }
 
 export interface Painting {
@@ -17,10 +18,10 @@ export interface Question {
   type: QuestionType;
   answer: Painting;
   choices?: any[];
-  // how should we display what the correct answer actually is?
-  correctResponse?: any;
   // check whether the response we put is actually correct.
   checker: (response: any) => boolean;
+  // points per question
+  points: number;
 }
 
 export interface GeneratingProps {
@@ -30,6 +31,23 @@ export interface GeneratingProps {
   inCorrect: {
     [name: string]: number;
   };
+}
+
+// takes in an array of elements and a set of probabilities that an element
+// could be picked (not necessarily summing to 1)
+// returns a randomly picked element.
+export function PickFromProbabilities<T>(arr: T[], probabilities: number[]): [T, number] {
+  const probsum = probabilities.reduce((a, b) => a + b, 0);
+  const randomNumber = Math.random() * probsum;
+  let cursum = 0;
+  for (let idx = 0; idx < probabilities.length; idx++) {
+    if (cursum < randomNumber && randomNumber < cursum + probabilities[idx]) {
+      return [arr[idx], idx];
+    } else {
+      cursum += probabilities[idx];
+    }
+  }
+  return [arr[arr.length - 1], arr.length - 1];
 }
 
 const YEARS_DELTA = 5;
@@ -94,15 +112,5 @@ export function pickPainting(props: GeneratingProps): [Painting, number] {
       (1 + 3 * Math.max(inCorrect[painting.src] || 0, 0)) /
       (1 + Math.max(correct[painting.src] || 0, 0))
   );
-  const probsum = probabilities.reduce((a, b) => a + b, 0);
-  const randomNumber = Math.random() * probsum;
-  let cursum = 0;
-  for (let idx = 0; idx < probabilities.length; idx++) {
-    if (cursum < randomNumber && randomNumber < cursum + probabilities[idx]) {
-      return [AllPaintings[idx], idx];
-    } else {
-      cursum += probabilities[idx];
-    }
-  }
-  return [AllPaintings[AllPaintings.length - 1], AllPaintings.length - 1];
+  return PickFromProbabilities(AllPaintings, probabilities)
 }

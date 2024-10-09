@@ -22,7 +22,7 @@ export function pickMultipleChoiceQuestion(props: GeneratingProps): Question {
     type: QuestionType.MultipleChoice,
     answer: painting,
     choices,
-    correctResponse: paintingToChoice(painting),
     checker,
+    points: 1,
   };
 }

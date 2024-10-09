@@ -15,6 +15,7 @@ import { DialogClose } from "@radix-ui/react-dialog";
 import { QuestionType } from "./questions";
 import {
   FreeResponseRenderer,
+  FreeYearRenderer,
   MultipleChoiceRenderer,
   YearChoiceRenderer,
 } from "./QuestionRenderer";
@@ -44,6 +45,8 @@ export default function GameRenderer() {
                 <FreeResponseRenderer key={questionNumber} />
               ) : currentQuestion.type === QuestionType.YearChoice ? (
                 <YearChoiceRenderer key={questionNumber} />
+              ) : currentQuestion.type === QuestionType.FreeYear ? (
+                <FreeYearRenderer />
               ) : (
                 <MultipleChoiceRenderer key={questionNumber} />
               )}

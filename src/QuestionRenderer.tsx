@@ -12,6 +12,31 @@ import {
 import { Painting } from "./questions";
 import { paintingToChoice } from "./multiplechoicequestion";
 
+export function FreeYearRenderer() {
+  const { answerCurrentQuestion, answeredState } = useGameState();
+  const [year, setYear] = useState<number | undefined>(undefined);
+  return (
+    <div className="my-5">
+      <h1 className="text-2xl">Identify an approximate year in which this artwork was created.</h1>
+      <h1 className="text-xl text-gray-800">Answers within the correct decade will be accepted.</h1>
+      <Input
+        placeholder="year"
+        value={year}
+        type="number"
+        onChange={(e) => setYear(!isNaN(parseInt(e.target.value)) ? parseInt(e.target.value) : undefined)}
+        className="my-2 text-[16px]"
+      />
+      <Button
+        onClick={() => answerCurrentQuestion && answerCurrentQuestion(year)}
+        disabled={year === undefined || answeredState !== AnsweredState.NotAnswered}
+        className="mt-2"
+      >
+        Submit
+      </Button>
+    </div>
+  );
+}
+
 export function FreeResponseRenderer() {
   const { currentQuestion, answerCurrentQuestion, answeredState } = useGameState();
   const [artist, setArtist] = useState<string>("");

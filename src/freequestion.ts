@@ -55,7 +55,7 @@ export function pickFreeQuestion(props: GeneratingProps): Question {
   return {
     type: QuestionType.FreeResponse,
     answer: painting[0],
-    correctResponse: [painting[0].artist, painting[0].names[0]],
     checker,
+    points: 3,
   };
 }
