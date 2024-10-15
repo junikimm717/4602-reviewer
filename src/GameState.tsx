@@ -10,6 +10,8 @@ import { pickFreeYearQuestion } from "./freeyear";
 const PICKERS = [pickMultipleChoiceQuestion, pickFreeQuestion, pickYearChoiceQuestion, pickFreeYearQuestion]
 const PICKER_PROBS = [1, 3, 1, 2]
 
+const ADAPTIVE_TYPES = [QuestionType.FreeResponse]
+
 export enum RunningGameState {
   NotStarted = 0,
   Running = 1,
@@ -147,8 +149,9 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
     )
       return;
     const painting = currentQuestion.answer;
+    const adaptive = ADAPTIVE_TYPES.findIndex(t => t === currentQuestion.type) !== -1;
     if (currentQuestion.checker(response)) {
-      setCorrect((c) => ({
+      adaptive && setCorrect((c) => ({
         ...c,
         [painting.src]: isNaN(c[painting.src] + 1) ? 1 : c[painting.src] + 1,
       }));
@@ -158,7 +161,7 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
       });
       setAnsweredState(AnsweredState.Correct);
     } else {
-      setInCorrect((ic) => ({
+      adaptive && setInCorrect((ic) => ({
         ...ic,
         [painting.src]: isNaN(ic[painting.src] + 1) ? 1 : ic[painting.src] + 1,
       }));

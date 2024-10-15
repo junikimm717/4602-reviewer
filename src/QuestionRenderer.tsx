@@ -41,9 +41,10 @@ export function FreeResponseRenderer() {
   const { currentQuestion, answerCurrentQuestion, answeredState } = useGameState();
   const [artist, setArtist] = useState<string>("");
   const [name, setName] = useState<string>("");
+  const [year, setYear] = useState<number | undefined>(undefined);
   return (
     <div className="my-5">
-      <h1 className="text-2xl">Identify the author and painting of this image.</h1>
+      <h1 className="text-2xl">Identify the creator, title, and approximate year of this image.</h1>
       <Input
         placeholder="artist"
         value={artist}
@@ -58,9 +59,16 @@ export function FreeResponseRenderer() {
         className="my-2 text-[16px]"
         key={currentQuestion!.answer.src + "name"}
       />
+      <Input
+        placeholder="year"
+        value={year}
+        type="number"
+        onChange={(e) => setYear(!isNaN(parseInt(e.target.value)) ? parseInt(e.target.value) : undefined)}
+        className="my-2 text-[16px]"
+      />
       <Button
-        onClick={() => answerCurrentQuestion && answerCurrentQuestion([artist, name])}
-        disabled={!name || !artist || answeredState !== AnsweredState.NotAnswered}
+        onClick={() => answerCurrentQuestion && answerCurrentQuestion([artist, name, year])}
+        disabled={!year || !name || !artist || answeredState !== AnsweredState.NotAnswered}
         className="mt-2"
       >
         Submit
