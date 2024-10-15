@@ -212,13 +212,13 @@
   {
     "src": "/paintings/dejeuner_1.png",
     "artist": "Claude Monet",
-    "names": ["Déjeuner sur l’herbe"],
+    "names": ["The Luncheon on the Grass", "Le Déjeuner sur l'herbe"],
     "years": [1865,1866]
   },
   {
     "src": "/paintings/dejeuner_2.png",
     "artist": "Claude Monet",
-    "names": ["Déjeuner sur l’herbe"],
+    "names": ["The Luncheon on the Grass", "Le Déjeuner sur l'herbe"],
     "years": [1865,1866]
   },
   {

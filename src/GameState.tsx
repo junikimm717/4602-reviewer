@@ -161,7 +161,7 @@ export function GameManagerProvider(props: { children: React.ReactNode }) {
       });
       setAnsweredState(AnsweredState.Correct);
     } else {
-      adaptive && setInCorrect((ic) => ({
+      setInCorrect((ic) => ({
         ...ic,
         [painting.src]: isNaN(ic[painting.src] + 1) ? 1 : ic[painting.src] + 1,
       }));
