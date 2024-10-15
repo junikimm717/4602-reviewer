@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import useGameState, { AnsweredState, RunningGameState } from "./GameState";
 import HomePage from "./HomePage";
 import Timer from "./Timer";
@@ -33,6 +33,23 @@ export default function GameRenderer() {
   if (runningState === RunningGameState.NotStarted) {
     return <HomePage />;
   }
+
+  useEffect(() => {
+    const callback = (e: KeyboardEvent) => {
+      if (
+        currentQuestion &&
+        runningState === RunningGameState.Running &&
+        answeredState !== AnsweredState.NotAnswered
+      ) {
+        if (e.key === "Enter" || e.key === "Right") {
+          newQuestion();
+        }
+      }
+    };
+    window.addEventListener("keyup", callback);
+    return () => window.removeEventListener("keyup", callback);
+  }, [currentQuestion, runningState, answeredState]);
+
   return (
     <>
       <Timer />

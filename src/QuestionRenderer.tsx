@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import useGameState, { AnsweredState } from "./GameState";
 import { Input } from "./components/ui/input";
 import { Button } from "./components/ui/button";
@@ -15,6 +15,12 @@ import { paintingToChoice } from "./multiplechoicequestion";
 export function FreeYearRenderer() {
   const { answerCurrentQuestion, answeredState } = useGameState();
   const [year, setYear] = useState<number | undefined>(undefined);
+  const disabled = year === undefined || answeredState !== AnsweredState.NotAnswered;
+  const submit = () => {
+    if (!disabled) {
+      answerCurrentQuestion && answerCurrentQuestion(year);
+    }
+  };
   return (
     <div className="my-5">
       <h1 className="text-2xl">Identify an approximate year in which this artwork was created.</h1>
@@ -23,14 +29,19 @@ export function FreeYearRenderer() {
         placeholder="year"
         value={year}
         type="number"
-        onChange={(e) => setYear(!isNaN(parseInt(e.target.value)) ? parseInt(e.target.value) : undefined)}
+        onChange={(e) =>
+          setYear(!isNaN(parseInt(e.target.value)) ? parseInt(e.target.value) : undefined)
+        }
         className="my-2 text-[16px]"
+        autoFocus
+        onKeyUp={(e) => {
+          if (e.key === "Enter" && answeredState === AnsweredState.NotAnswered) {
+            e.stopPropagation()
+            submit();
+          }
+        }}
       />
-      <Button
-        onClick={() => answerCurrentQuestion && answerCurrentQuestion(year)}
-        disabled={year === undefined || answeredState !== AnsweredState.NotAnswered}
-        className="mt-2"
-      >
+      <Button onClick={() => submit()} disabled={disabled} className="mt-2">
         Submit
       </Button>
     </div>
@@ -42,35 +53,64 @@ export function FreeResponseRenderer() {
   const [artist, setArtist] = useState<string>("");
   const [name, setName] = useState<string>("");
   const [year, setYear] = useState<number | undefined>(undefined);
+
+  const artistRef = useRef<HTMLInputElement>(null);
+  const titleRef = useRef<HTMLInputElement>(null);
+  const yearRef = useRef<HTMLInputElement>(null);
+
+  const disabled = !year || !name || !artist || answeredState !== AnsweredState.NotAnswered;
+  const submit = () => {
+    if (!disabled) {
+      answerCurrentQuestion && answerCurrentQuestion([artist, name, year]);
+    }
+  };
   return (
     <div className="my-5">
       <h1 className="text-2xl">Identify the creator, title, and approximate year of this image.</h1>
       <Input
         placeholder="artist"
         value={artist}
+        ref={artistRef}
         onChange={(e) => setArtist(e.target.value)}
+        onKeyUp={(e) => {
+          if (e.key === "Enter") {
+            titleRef.current && titleRef.current.focus();
+          }
+        }}
+        autoFocus
         className="my-2 text-[16px]"
         key={currentQuestion!.answer.src + "artist"}
       />
       <Input
         placeholder="title"
         value={name}
+        ref={titleRef}
         onChange={(e) => setName(e.target.value)}
+        onKeyUp={(e) => {
+          if (e.key === "Enter") {
+            yearRef.current && yearRef.current.focus();
+          }
+        }}
         className="my-2 text-[16px]"
         key={currentQuestion!.answer.src + "name"}
       />
       <Input
         placeholder="year"
         value={year}
+        ref={yearRef}
         type="number"
-        onChange={(e) => setYear(!isNaN(parseInt(e.target.value)) ? parseInt(e.target.value) : undefined)}
+        onChange={(e) =>
+          setYear(!isNaN(parseInt(e.target.value)) ? parseInt(e.target.value) : undefined)
+        }
+        onKeyUp={(e) => {
+          if (e.key === "Enter" && answeredState === AnsweredState.NotAnswered) {
+            e.stopPropagation()
+            submit();
+          }
+        }}
         className="my-2 text-[16px]"
       />
-      <Button
-        onClick={() => answerCurrentQuestion && answerCurrentQuestion([artist, name, year])}
-        disabled={!year || !name || !artist || answeredState !== AnsweredState.NotAnswered}
-        className="mt-2"
-      >
+      <Button onClick={submit} disabled={disabled} className="mt-2">
         Submit
       </Button>
     </div>
@@ -84,7 +124,7 @@ export function MultipleChoiceRenderer() {
     <div className="my-5">
       <h1 className="text-2xl">Identify the author and title of this image.</h1>
       <Select onValueChange={(value) => setResponse(value)}>
-        <SelectTrigger className="w-[min(100%,500px)] my-2">
+        <SelectTrigger className="w-[min(100%,500px)] my-2" autoFocus>
           <SelectValue placeholder="Painting" />
         </SelectTrigger>
         <SelectContent>
