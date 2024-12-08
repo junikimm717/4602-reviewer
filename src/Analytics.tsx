@@ -1,6 +1,6 @@
 import React from "react";
 import useGameState from "./GameState";
-import AllPaintings from "../midterm.json";
+import AllPaintings from "../final.json";
 import { Painting } from "./questions";
 import { Button } from "./components/ui/button";
 import {
