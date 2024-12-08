@@ -1,330 +1,330 @@
 [
   {
-    "src": "/paintings/oath_horatii.jpg",
+    "src": "/midterm/oath_horatii.jpg",
     "artist": "Jacques-Louis David",
     "names": ["Oath of the Horatii"],
     "years": [1784]
   },
   {
-    "src": "/paintings/tennis_court.jpg",
+    "src": "/midterm/tennis_court.jpg",
     "artist": "Jacques-Louis David",
     "names": ["Oath in the Tennis Court"],
     "years": [1790, 1791, 1792]
   },
   {
-    "src": "/paintings/death_marat.jpg",
+    "src": "/midterm/death_marat.jpg",
     "artist": "Jacques-Louis David",
     "names": ["Death of Marat"],
     "years": [1793]
   },
   {
-    "src": "/paintings/raft_medusa.jpg",
+    "src": "/midterm/raft_medusa.jpg",
     "artist": "Théodore Géricault",
     "names": ["The Raft of the Medusa"],
     "years": [1817, 1818, 1819]
   },
   {
-    "src": "/paintings/massacre_chios.jpg",
+    "src": "/midterm/massacre_chios.jpg",
     "artist": "Eugène Delacroix",
     "names": ["Massacre at Chios"],
     "years": [1824]
   },
   {
-    "src": "/paintings/apotheosis_homer.jpg",
+    "src": "/midterm/apotheosis_homer.jpg",
     "artist": "Jean-Auguste-Dominique Ingres",
     "names": ["Apotheosis of Homer"],
     "years": [1827]
   },
   {
-    "src": "/paintings/liberty_barricades.jpg",
+    "src": "/midterm/liberty_barricades.jpg",
     "artist": "Eugène Delacroix",
     "names": ["Liberty at the Barricades", "Liberty Leading the People"],
     "years": [1830]
   },
   {
-    "src": "/paintings/gargantua.jpg",
+    "src": "/midterm/gargantua.jpg",
     "artist": "Honoré Daumier",
     "names": ["Gargantua"],
     "years": [1831]
   },
   {
-    "src": "/paintings/transnonain.jpg",
+    "src": "/midterm/transnonain.jpg",
     "artist": "Honoré Daumier",
     "names": ["Rue Transnonain"],
     "years": [1834]
   },
   {
-    "src": "/paintings/republique.jpg",
+    "src": "/midterm/republique.jpg",
     "artist": "Honoré Daumier",
     "names": ["La Republique", "the republic"],
     "years": [1848]
   },
   {
-    "src": "/paintings/stonebreakers.jpg",
+    "src": "/midterm/stonebreakers.jpg",
     "artist": "Gustave Courbet",
     "names": ["Stonebreakers", "The Stone Breakers"],
     "years": [1849]
   },
   {
-    "src": "/paintings/themeeting.jpg",
+    "src": "/midterm/themeeting.jpg",
     "artist": "Gustave Courbet",
     "names": ["The Meeting", "Bonjour, Monsieur Courbet"],
     "years": [1854]
   },
   {
-    "src": "/paintings/burial_ornans.jpg",
+    "src": "/midterm/burial_ornans.jpg",
     "artist": "Gustave Courbet",
     "names": ["A Burial at Ornans", "Un enterrement à Ornans"],
     "years": [1849, 1850]
   },
   {
-    "src": "/paintings/painters_studio.jpg",
+    "src": "/midterm/painters_studio.jpg",
     "artist": "Gustave Courbet",
     "names": ["The Painter's Studio"],
     "years": [1855]
   },
   {
-    "src": "/paintings/absinthe_drinker.jpg",
+    "src": "/midterm/absinthe_drinker.jpg",
     "artist": "Edouard Manet",
     "names": ["The Absinthe Drinker"],
     "years": [1859]
   },
   {
-    "src": "/paintings/street_singer.jpg",
+    "src": "/midterm/street_singer.jpg",
     "artist": "Edouard Manet",
     "names": ["The Street Singer"],
     "years": [1862]
   },
   {
-    "src": "/paintings/luncheon.jpg",
+    "src": "/midterm/luncheon.jpg",
     "artist": "Edouard Manet",
     "names": ["The Luncheon on the Grass", "Le Déjeuner sur l'herbe"],
     "years": [1863]
   },
   {
-    "src": "/paintings/olympia.jpg",
+    "src": "/midterm/olympia.jpg",
     "artist": "Edouard Manet",
     "names": ["Olympia"],
     "years": [1863]
   },
   {
-    "src": "/paintings/dead_christ.jpg",
+    "src": "/midterm/dead_christ.jpg",
     "artist": "Edouard Manet",
     "names": ["The Dead Christ with Angels", "Le Christ mort et les anges"],
     "years": [1864]
   },
   {
-    "src": "/paintings/execution.jpg",
+    "src": "/midterm/execution.jpg",
     "artist": "Edouard Manet",
     "names": ["The Execution of Emperor Maximilian"],
     "years": [1867,1868,1869]
   },
   {
-    "src": "/paintings/bar_folies.jpg",
+    "src": "/midterm/bar_folies.jpg",
     "artist": "Edouard Manet",
     "names": ["A Bar at the Folies-Bergère", "Un bar aux Folies Bergère"],
     "years": [1882]
   },
   {
-    "src": "/paintings/dou_venons_nous.jpg",
+    "src": "/midterm/dou_venons_nous.jpg",
     "artist": "Paul Gauguin",
     "names": ["D'où venons-nous"],
     "years": [1897]
   },
   {
-    "src": "/paintings/bellelli_family.jpg",
+    "src": "/midterm/bellelli_family.jpg",
     "artist": "Edgar Degas",
     "names": ["The Bellelli Family"],
     "years": [1858,1859,1860]
   },
   {
-    "src": "/paintings/breton_girls.jpg",
+    "src": "/midterm/breton_girls.jpg",
     "artist": "Paul Gauguin",
     "names": ["Landscape with Two Breton Girls"],
     "years": [1889]
   },
   {
-    "src": "/paintings/dante.png",
+    "src": "/midterm/dante.png",
     "artist": "Eugène Delacroix",
     "names": ["Barque of Dante"],
     "years": [1822]
   },
   {
-    "src": "/paintings/louis_philippe.png",
+    "src": "/midterm/louis_philippe.png",
     "artist": "Horace Vernet",
     "names": ["King Louis-Philippe and his Sons Riding Out from the Château of Versailles"],
     "years": [1846]
   },
   {
-    "src": "/paintings/poire.png",
+    "src": "/midterm/poire.png",
     "artist": "Honoré Daumier",
     "names": ["Le Poire"],
     "years": [1831]
   },
   {
-    "src": "/paintings/balcony.png",
+    "src": "/midterm/balcony.png",
     "artist": "Edouard Manet",
     "names": ["The Balcony"],
     "years": [1874]
   },
   {
-    "src": "/paintings/nana.png",
+    "src": "/midterm/nana.png",
     "artist": "Edouard Manet",
     "names": ["Nana"],
     "years": [1877]
   },
   {
-    "src": "/paintings/morisot_balcony.png",
+    "src": "/midterm/morisot_balcony.png",
     "artist": "Berthe Morisot",
     "names": ["On the Balcony"],
     "years": [1872]
   },
   {
-    "src": "/paintings/morisot_powder.png",
+    "src": "/midterm/morisot_powder.png",
     "artist": "Berthe Morisot",
     "names": ["Young Woman Powdering her Face"],
     "years": [1877]
   },
   {
-    "src": "/paintings/opera.png",
+    "src": "/midterm/opera.png",
     "artist": "Mary Cassatt",
     "names": ["At the Opera"],
     "years": [1880]
   },
   {
-    "src": "/paintings/laundress.png",
+    "src": "/midterm/laundress.png",
     "artist": "Anonymous",
     "names": ["Laundress"],
     "years": [1861]
   },
   {
-    "src": "/paintings/concorde.png",
+    "src": "/midterm/concorde.png",
     "artist": "Edgar Degas",
     "names": ["Place de la Concorde"],
     "years": [1875]
   },
   {
-    "src": "/paintings/cafe_terrace.png",
+    "src": "/midterm/cafe_terrace.png",
     "artist": "Edgar Degas",
     "names": ["Women on a Café Terrace, Evening"],
     "years": [1877]
   },
   {
-    "src": "/paintings/dejeuner_1.png",
+    "src": "/midterm/dejeuner_1.png",
     "artist": "Claude Monet",
     "names": ["The Luncheon on the Grass", "Le Déjeuner sur l'herbe"],
     "years": [1865,1866]
   },
   {
-    "src": "/paintings/dejeuner_2.png",
+    "src": "/midterm/dejeuner_2.png",
     "artist": "Claude Monet",
     "names": ["The Luncheon on the Grass", "Le Déjeuner sur l'herbe"],
     "years": [1865,1866]
   },
   {
-    "src": "/paintings/boulevard.png",
+    "src": "/midterm/boulevard.png",
     "artist": "Claude Monet",
     "names": ["Boulevard des Capucines"],
     "years": [1872,1873]
   },
   {
-    "src": "/paintings/sunrise.png",
+    "src": "/midterm/sunrise.png",
     "artist": "Claude Monet",
     "names": ["Impression, Sunrise"],
     "years": [1872]
   },
   {
-    "src": "/paintings/japonaise.png",
+    "src": "/midterm/japonaise.png",
     "artist": "Claude Monet",
     "names": ["La Japonaise"],
     "years": [1876]
   },
   {
-    "src": "/paintings/nympheas.png",
+    "src": "/midterm/nympheas.png",
     "artist": "Claude Monet",
     "names": ["Water Lilies","Nympheas"],
     "years": [1905]
   },
   {
-    "src": "/paintings/bare_headed.png",
+    "src": "/midterm/bare_headed.png",
     "artist": "Gustave Caillebotte",
     "names": ["Bare-Headed Man Seen from Behind at the Window"],
     "years": [1875]
   },
   {
-    "src": "/paintings/sunday_afternoon.png",
+    "src": "/midterm/sunday_afternoon.png",
     "artist": "Georges Seurat",
     "names": ["Sunday Afternoon on the Island of La Grande Jatte"],
     "years": [1884,1885,1886]
   },
   {
-    "src": "/paintings/asineres.png",
+    "src": "/midterm/asineres.png",
     "artist": "Georges Seurat",
     "names": ["Bathers at Asnières"],
     "years": [1884]
   },
   {
-    "src": "/paintings/bathers.png",
+    "src": "/midterm/bathers.png",
     "artist": "Paul Cézanne",
     "names": ["The Large Bathers"],
     "years": [1906]
   },
   {
-    "src": "/paintings/moulin.png",
+    "src": "/midterm/moulin.png",
     "artist": "Henri de Toulouse-Lautrec",
     "names": ["Englishman at the Moulin Rouge"],
     "years": [1892]
   },
   {
-    "src": "/paintings/avril_1.png",
+    "src": "/midterm/avril_1.png",
     "artist": "Henri de Toulouse-Lautrec",
     "names": ["Jane Avril"],
     "years": [1893]
   },
   {
-    "src": "/paintings/avril_2.png",
+    "src": "/midterm/avril_2.png",
     "artist": "Henri de Toulouse-Lautrec",
     "names": ["Jane Avril"],
     "years": [1893]
   },
   {
-    "src": "/paintings/gauguin_portrait.png",
+    "src": "/midterm/gauguin_portrait.png",
     "artist": "Paul Gauguin",
     "names": ["Self-Portrait (les Misérables)"],
     "years": [1888]
   },
   {
-    "src": "/paintings/vangogh_portrait.png",
+    "src": "/midterm/vangogh_portrait.png",
     "artist": "Vincent van Gogh",
     "names": ["Self-Portrait"],
     "years": [1888]
   },
   {
-    "src": "/paintings/vangogh_japan.png",
+    "src": "/midterm/vangogh_japan.png",
     "artist": "Vincent van Gogh",
     "names": ["Japonaiserie: The Bridge in the Rain"],
     "years": [1886,1887,1888]
   },
   {
-    "src": "/paintings/snake_charmer.png",
+    "src": "/midterm/snake_charmer.png",
     "artist": "Jean-Léon Gérôme",
     "names": ["Snake Charmer"],
     "years": [1880]
   },
   {
-    "src": "/paintings/tassel_house.png",
+    "src": "/midterm/tassel_house.png",
     "artist": "Victor Horta",
     "names": ["Tassel House"],
     "years": [1893,1894,1895]
   },
   {
-    "src": "/paintings/artistic_dress.png",
+    "src": "/midterm/artistic_dress.png",
     "artist": "Henry van de Velde",
     "names": ["Artistic Dress"],
     "years": [1900]
   },
   {
-    "src": "/paintings/parismetro.png",
+    "src": "/midterm/parismetro.png",
     "artist": "Hector Guimard",
     "names": ["Paris Metro"],
     "years": [1900]

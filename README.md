@@ -31,8 +31,8 @@ should work:
 
 ## Paintings
 
-1. Add a new picture under `./public/paintings`
-2. Add a new entry to `./allpaintings.json` with the form as follows:
+1. Add a new picture under `./public/midterm` or `./public/final`
+2. Add a new entry to either `./midterm.json` or `./final.json` with the form as follows:
   ```json
   {
     "src": "/paintings/execution.jpg",
