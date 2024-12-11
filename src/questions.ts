@@ -1,4 +1,4 @@
-import AllPaintings from "../midterm.json";
+import AllPaintings from "../final.json";
 
 export enum QuestionType {
   MultipleChoice = 0,
