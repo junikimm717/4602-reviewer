@@ -1,38 +1,5 @@
 [
   {
-    "src": "/final/1.png",
-    "artist": "Jacques-Louis David",
-    "names": [
-      "Oath in the Tennis Court"
-    ],
-    "years": [
-      1790,
-      1791,
-      1792
-    ]
-  },
-  {
-    "src": "/midterm/liberty_barricades.jpg",
-    "artist": "Eugène Delacroix",
-    "names": [
-      "Liberty at the Barricades",
-      "Liberty Leading the People"
-    ],
-    "years": [
-      1830
-    ]
-  },
-  {
-    "src": "/midterm/painters_studio.jpg",
-    "artist": "Gustave Courbet",
-    "names": [
-      "The Painter's Studio"
-    ],
-    "years": [
-      1855
-    ]
-  },
-  {
     "src": "/midterm/olympia.jpg",
     "artist": "Edouard Manet",
     "names": [
@@ -40,50 +7,6 @@
     ],
     "years": [
       1863
-    ]
-  },
-  {
-    "src": "/midterm/dou_venons_nous.jpg",
-    "artist": "Paul Gauguin",
-    "names": [
-      "D'où venons-nous"
-    ],
-    "years": [
-      1897
-    ]
-  },
-  {
-    "src": "/midterm/boulevard.png",
-    "artist": "Claude Monet",
-    "names": [
-      "Boulevard des Capucines"
-    ],
-    "years": [
-      1872,
-      1873
-    ]
-  },
-  {
-    "src": "/midterm/japonaise.png",
-    "artist": "Claude Monet",
-    "names": [
-      "La Japonaise"
-    ],
-    "years": [
-      1876
-    ]
-  },
-  {
-    "src": "/midterm/sunday_afternoon.png",
-    "artist": "Georges Seurat",
-    "names": [
-      "A Sunday on La Grande Jatte",
-      "Sunday Afternoon on the Island of La Grande Jatte"
-    ],
-    "years": [
-      1884,
-      1885,
-      1886
     ]
   },
   {
@@ -97,17 +20,6 @@
     ]
   },
   {
-    "src": "/final/10.png",
-    "artist": "Georges Braque",
-    "names": [
-      "Violin and Palette"
-    ],
-    "years": [
-      1909,
-      1910
-    ]
-  },
-  {
     "src": "/final/11.png",
     "artist": "Pablo Picasso",
     "names": [
@@ -118,40 +30,20 @@
     ]
   },
   {
-    "src": "/final/12.png",
-    "artist": "Anton Bragaglia",
+    "src": "/final/22.png",
+    "artist": "Kasimir Malevich",
     "names": [
-      "Fotodynamic Portrait"
-    ],
-    "years": [
-      1911
-    ]
-  },
-  {
-    "src": "/final/13.png",
-    "artist": "Umberto Boccioni",
-    "names": [
-      "Unique Form of Continuity in Space"
+      "Red Square"
     ],
     "years": [
       1913
     ]
   },
   {
-    "src": "/final/14.png",
-    "artist": "Hugo Ball",
-    "names": [
-      "Reciting his poem caravan at cabaret voltaire"
-    ],
-    "years": [
-      1916
-    ]
-  },
-  {
     "src": "/final/15.png",
-    "artist": "Raoul Haussman",
+    "artist": "Raoul Haussmann",
     "names": [
-      "Mechanical Head - The Spirit of our Time"
+      "Mechanical Head"
     ],
     "years": [
       1919,
@@ -167,16 +59,6 @@
     ],
     "years": [
       1920
-    ]
-  },
-  {
-    "src": "/final/17.png",
-    "artist": "John Heartfeld",
-    "names": [
-      "Hurray, the Butter is Gone!"
-    ],
-    "years": [
-      1935
     ]
   },
   {
@@ -211,37 +93,6 @@
     ]
   },
   {
-    "src": "/final/21.png",
-    "artist": "Marcel Duchamp",
-    "names": [
-      "The Bride Stripped"
-    ],
-    "years": [
-      1915,
-      1923
-    ]
-  },
-  {
-    "src": "/final/22.png",
-    "artist": "Kasimir Malevich",
-    "names": [
-      "Red Square (Peasant Woman in 2 Dimensions)"
-    ],
-    "years": [
-      1913
-    ]
-  },
-  {
-    "src": "/final/23.png",
-    "artist": "El Lissitzky",
-    "names": [
-      "The Constructor"
-    ],
-    "years": [
-      1924
-    ]
-  },
-  {
     "src": "/final/24.png",
     "artist": "Vladimir Tatlin",
     "names": [
@@ -253,70 +104,20 @@
     ]
   },
   {
-    "src": "/final/25.png",
-    "artist": "Sofia Terk Delaunay",
-    "names": [
-      "Clothing for models and paint design for citroen"
-    ],
-    "years": [
-      1925
-    ]
-  },
-  {
-    "src": "/final/26.png",
-    "artist": "Oscar Schlemmer",
-    "names": [
-      "two figures from the triadic ballet"
-    ],
-    "years": [
-      1922
-    ]
-  },
-  {
     "src": "/final/27.png",
     "artist": "Marcel Breuer and Oscar Schlemmer",
     "names": [
-      "woman wearing mask seated in wassily chair"
+      "woman wearing schlemmer mask seated in breuer's wassily chair"
     ],
     "years": [
       1926
     ]
   },
   {
-    "src": "/final/28.png",
-    "artist": "Anni Albers and Walter Gropius",
-    "names": [
-      "Dorm room for harvard"
-    ],
-    "years": [
-      1949
-    ]
-  },
-  {
-    "src": "/final/29.png",
-    "artist": "Yves Tanguy",
-    "names": [
-      "Large Painting - landscape"
-    ],
-    "years": [
-      1927
-    ]
-  },
-  {
-    "src": "/final/30.png",
-    "artist": "Andre Masson",
-    "names": [
-      "Automatic Drawing"
-    ],
-    "years": [
-      1924
-    ]
-  },
-  {
     "src": "/final/31.png",
     "artist": "Meret Oppenheim",
     "names": [
-      "Object (Breakfast in Fur)"
+      "Breakfast in Fur"
     ],
     "years": [
       1936
@@ -334,7 +135,7 @@
   },
   {
     "src": "/final/33.png",
-    "artist": "Jason Pollock",
+    "artist": "Jackson Pollock",
     "names": [
       "No 1, 1948"
     ],
@@ -360,26 +161,6 @@
     ],
     "years": [
       1955
-    ]
-  },
-  {
-    "src": "/final/36.png",
-    "artist": "Robert Rauschenberg",
-    "names": [
-      "Cocal-Cola Plan"
-    ],
-    "years": [
-      1958
-    ]
-  },
-  {
-    "src": "/final/37.png",
-    "artist": "Eduardo Paolozzi",
-    "names": [
-      "Psychological Atlas"
-    ],
-    "years": [
-      1947
     ]
   },
   {
@@ -443,16 +224,6 @@
     ]
   },
   {
-    "src": "/final/44.png",
-    "artist": "Guy Debord",
-    "names": [
-      "Naked City"
-    ],
-    "years": [
-      1957
-    ]
-  },
-  {
     "src": "/final/45.png",
     "artist": "Hans Haacke",
     "names": [
@@ -463,16 +234,6 @@
     ]
   },
   {
-    "src": "/final/46.png",
-    "artist": "Clido Meireles",
-    "names": [
-      "Insertions into Ideologial Circuits"
-    ],
-    "years": [
-      1970
-    ]
-  },
-  {
     "src": "/final/47.png",
     "artist": "Mierle Ukeles",
     "names": [
@@ -480,16 +241,6 @@
     ],
     "years": [
       1974
-    ]
-  },
-  {
-    "src": "/final/48.png",
-    "artist": "Kryzstof Wodiczko",
-    "names": [
-      "Hirshhorn Projections"
-    ],
-    "years": [
-      1989
     ]
   },
   {
@@ -513,23 +264,14 @@
     ]
   },
   {
-    "src": "/final/51.png",
-    "artist": "Sherrie Levine",
+    "src": "/final/56.png",
+    "artist": "Coco Fusco and Guillermo Gomez Pena",
     "names": [
-      "After Walker Evans"
+      "Couple in the Page: Two Undiscovered Amerindians Visit the West"
     ],
     "years": [
-      1981
-    ]
-  },
-  {
-    "src": "/final/52.png",
-    "artist": "Haim Steinbach",
-    "names": [
-      "Security and Serenity"
-    ],
-    "years": [
-      1986
+      1992,
+      1993
     ]
   },
   {
@@ -560,57 +302,6 @@
     ],
     "years": [
       1982
-    ]
-  },
-  {
-    "src": "/final/56.png",
-    "artist": "Coco Fusco and Guillermo Gomez Pena",
-    "names": [
-      "Couple in the Page: Two Undiscovered Amerindians Visit the West"
-    ],
-    "years": [
-      1992,
-      1993
-    ]
-  },
-  {
-    "src": "/final/57.png",
-    "artist": "Hito Steyerl",
-    "names": [
-      "How Not to be Seen"
-    ],
-    "years": [
-      2013
-    ]
-  },
-  {
-    "src": "/final/58.png",
-    "artist": "Trevor Paglen and Jacob Appelbaum",
-    "names": [
-      "Autonomy Cube"
-    ],
-    "years": [
-      2014
-    ]
-  },
-  {
-    "src": "/final/59.png",
-    "artist": "Anicka Yi",
-    "names": [
-      "Grabbing at Newer Vegetables"
-    ],
-    "years": [
-      2015
-    ]
-  },
-  {
-    "src": "/final/60.png",
-    "artist": "Gilberto Esparaza",
-    "names": [
-      "Autophotosynthetic Plants"
-    ],
-    "years": [
-      2013
     ]
   }
 ]
