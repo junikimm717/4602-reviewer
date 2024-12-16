@@ -8,7 +8,7 @@ import { getStoredInt } from "./utils";
 import { pickFreeYearQuestion } from "./freeyear";
 
 const PICKERS = [pickMultipleChoiceQuestion, pickFreeQuestion, pickYearChoiceQuestion, pickFreeYearQuestion]
-const PICKER_PROBS = [1, 3, 1, 2]
+const PICKER_PROBS = [1, 8, 1, 2]
 
 const ADAPTIVE_TYPES = [QuestionType.FreeResponse]
 
